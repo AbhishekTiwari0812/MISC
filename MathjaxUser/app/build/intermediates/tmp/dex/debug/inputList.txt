@@ -1,0 +1,5 @@
+I:\android projects\Internshipproject\app\build\intermediates\classes\debug
+I:\android projects\Internshipproject\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-17d0d908a2b69175a9878b3e53ccf844f7c59ab7.jar
+I:\android projects\Internshipproject\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-9fea92c253ff3e3ec3ce93c667da448dbbd08de8.jar
+I:\android projects\Internshipproject\app\build\intermediates\pre-dexed\debug\classes-cbca56c76da47ec98994e90833c99b268d874152.jar
+I:\android projects\Internshipproject\app\build\intermediates\pre-dexed\debug\classes-3d34128adaf2659bcffb6180329776f81c2760f0.jar
