@@ -1,0 +1,8 @@
+some random text
+containing newline
+and some 
+lorem ipsum \n and stuff.
+how cna I come up with new text 
+each and every time 
+I have to take example of something 
+yuo tell me!

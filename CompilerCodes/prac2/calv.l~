@@ -1,0 +1,36 @@
+%{
+#include<stdio.h>
+#include "y.tab.h"
+
+%}
+
+INT		[0-9]+
+REAL	{INT}?"."{INT}+
+IDENT 	[a-z]
+
+%%
+
+{INT}	{	printf("INT token=%d\n",atoi(yytext));	
+			yylval=atoi(yytext);		
+			return INT;
+		}
+{IDENT}	{	printf("Identifier token=%s\n",yytext);	
+			yylval=*yytext-'a';			
+			return IDENT;}
+{REAL}	{
+		printf("real number token=%g\n",atof(yytext));
+		return REAL;
+		}
+[-+()=/*\n]		{	printf("Operator token: %\n",yytext);
+				return	*yytext; 
+			}
+[ \t]		{;}
+.		{	printf("Unrecognized character\n");	}
+
+
+%%
+int yywrap(void)
+{
+return 1;
+}
+
