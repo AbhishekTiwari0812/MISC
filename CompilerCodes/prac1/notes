@@ -1,0 +1,16 @@
+include "y.tab.h" in lex to make it work with yacc.
+
+values associated with the token will be contained in yylval which is evaluated in lex.
+for example 
+
+
+{INT}	{
+		yylval=atoi(yytext);
+		return INTEGER;	
+	}
+
+To return an operator we use
+return *yytext
+
+
+have to specify y.tab.h in lex and have to specify void yyerror(char *stderr) in yacc

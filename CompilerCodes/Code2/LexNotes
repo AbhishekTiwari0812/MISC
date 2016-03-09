@@ -1,0 +1,50 @@
+http://www.csd.uwo.ca/~moreno//CS447/Lectures/Lexical.html/node11.html
+
+If r and s are two LEX regular expressions then r/s is another LEX regular expression.
+	It matches r if and only if it is followed by an s.
+	It is called a trailing context.
+	After use in this context, s is then returned to the input before the action is executed. So the action only sees the text matched by r
+	Left context is handled by means of start conditions which we will talk about later.
+
+How the input is matched
+
+BASIC PRINCIPLES.
+
+(1)
+When the generated scanner is run, it analyses its input string looking for strings which match any of its patterns.
+(2)
+If the current input can be matched by several expressions, then the ambiguity is resolved by the following rules.
+	(2.1)
+	The longest match is preferred.
+	(2.2)
+	The rule given first is preferred.
+(3)
+Once the match is determined,
+	(3.1)
+	the text corresponding to it is available in the global character pointer yytext its length is yyleng and the current line number is yylineno,
+	(3.2)
+	and the action corresponding to the matched pattern is then executed,
+	(3.3)
+	and then the remaining input is scanned for another match.
+==============
+LEX ROUTINES AND MACROS. There are a number of special directives which can be included within an action.
+
+ECHO
+copies yytext to the scanner's output.
+REJECT
+directs the scanner to proceed on to the "second best" rule which matched the input (or a prefix of the input). For example, the following will both count the words in the input and call the routine special() whenever "foo" is seen:
+int word_count = 0;
+%%
+foo     special(); REJECT;
+[^ \t\n]+   ++word_count;
+Multiple REJECT's are allowed, each one finding the next best choice to the currently active rule.
+yymore()
+tells the scanner that the next time it matches a rule, the corresponding token should be appended onto the current value of yytext rather than replacing it. The following
+%%
+very[ ] {ECHO; yymore();}
+good ECHO;
+will write "very very good" to the output.
+See also yyless(), yyterminate(), input(), output(), unput() in the documentation.
+===================
+
+

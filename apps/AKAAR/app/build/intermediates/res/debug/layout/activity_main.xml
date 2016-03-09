@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="#277554">
+
+    <Button
+        style="@style/button_style"
+        android:text="Today's Stat"
+        android:id="@+id/today_stat"
+        android:layout_marginTop="40dp"/>
+
+    <Button
+        style="@style/button_style"
+        android:text="Complete Stat"
+        android:layout_below="@+id/today_stat"
+        android:id="@+id/complete_stat" />
+
+    <Button
+        style="@style/button_style"
+        android:text="Students List"
+        android:id="@+id/student_list"
+        android:layout_below="@id/complete_stat"/>
+
+
+    <Button
+        style="@style/button_style"
+        android:text="New Button"
+        android:id="@+id/button2"
+        android:layout_below="@id/student_list"/>
+
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout><!-- From: file:/I:/android%20projects/AKAAR/app/src/main/res/layout/activity_main.xml -->

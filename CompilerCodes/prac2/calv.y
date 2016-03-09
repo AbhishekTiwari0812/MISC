@@ -1,0 +1,51 @@
+%{
+#include<stdio.h>
+int yylex(void);
+FILE * yyin;
+//read from a file in yacc
+ int sym[26];
+
+%}
+
+
+%token INT REAL IDENT
+%left '+' '-'
+%right '*' '/'
+
+
+%%
+
+program	:	program statement	'\n'			
+			|
+			;
+statement	:	
+			expr			{printf("%d\n",$1);}
+			| IDENT '='expr		{	sym[$1]=$3;	}
+			
+
+expr	:
+		INT	
+		| IDENT					{	$$=sym[$1];	}
+		|	expr '+' expr 			{	$$=$1+$3;	}	
+		|	expr '-' expr 			{	$$=$1-$3;	}	
+		|	expr '*' expr 			{	$$=$1*$3;	}	
+		|	expr '/' expr 			{	$$=$1/$3;	}	
+		|	'(' expr ')'				{	$$=$2;			}	
+		;
+
+%%
+
+void yyerror(char *s)
+{
+fprintf(stderr,"%s",s);
+}
+int main(int argc,char* argv[])
+{
+//yyin=argv[1];
+yyparse();
+//fclose(yyin);
+return 0;
+
+}
+
+

@@ -1,0 +1,5 @@
+I:\android projects\AKAAR\app\build\intermediates\classes\debug
+I:\android projects\AKAAR\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-17d0d908a2b69175a9878b3e53ccf844f7c59ab7.jar
+I:\android projects\AKAAR\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-0362bc9a57571d6f81c2d69cf926693c7ef091d5.jar
+I:\android projects\AKAAR\app\build\intermediates\pre-dexed\debug\classes-7799569e50813c32b9aa5ae8736e995e147aae94.jar
+I:\android projects\AKAAR\app\build\intermediates\pre-dexed\debug\classes-38512dc926147b1affacd29014ed6cc1e4589e71.jar

@@ -1,0 +1,27 @@
+%{
+FILE* in;
+FILE* OUT;
+%}
+%%
+.	fprintf(OUT, "%s", yytext);
+\n	ECHO;
+
+%%
+
+int yywrap()
+{
+return -1;
+}
+
+int main(int argc,char* argv[])
+{
+//lex MatchEvery.l
+//gcc lex.yy.c
+// ./a.out input.txt output.txt
+in=fopen(argv[1],"r");
+OUT=fopen(argv[2],"w");
+yyin=in;
+yyout=OUT;
+yylex();
+return 0;
+}
